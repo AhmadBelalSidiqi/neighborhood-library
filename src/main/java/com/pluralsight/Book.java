@@ -25,38 +25,24 @@ public class Book {
         this.isCheckout = isCheckout;
     }
 
-    //---
+
     // methods
     public void checkOut (String name){
         checkedOutTo = name;
         isCheckout = true;
+        System.out.println("Check out successful.");
     }
-    public void checkIn(int id){
-       if (String.valueOf(id).equals(this.id))
-       {checkedOutTo="";
-        isCheckout =false;
-           System.out.println("Check In complete.");
-       } else {
-           System.out.println("Wrong Id.");
-       }
 
+    public void checkIn(){
+        checkedOutTo="";
+        isCheckout =false;
+        System.out.println("Check In successful.");
     }
-    // ----
     // Getters
     public boolean isCheckOut() {
         return isCheckout;
     }
 
-    public String getCheckedOutTo() {
-        return checkedOutTo;
-    }
-    // Setter
 
-    public void setCheckedOutTo(String checkedOutTo) {
-        this.checkedOutTo = checkedOutTo;
-    }
-
-
-    //--
 
 }
