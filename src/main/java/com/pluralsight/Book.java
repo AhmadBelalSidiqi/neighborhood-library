@@ -5,7 +5,7 @@ public class Book {
      String isbn;
      String title;
      String checkedOutTo;
-     boolean isCheckedout;
+     boolean isCheckout;
 
      // Constructor
     public Book() {
@@ -14,18 +14,27 @@ public class Book {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
-        this.isCheckedout = isCheckedout;
+        this.isCheckout = isCheckedout;
     }
+
+    public Book( int id, String isbn, String title, boolean isCheckout,String checkedOutTo) {
+        this.checkedOutTo = checkedOutTo;
+        this.id = id;
+        this.isbn = isbn;
+        this.title = title;
+        this.isCheckout = isCheckout;
+    }
+
     //---
     // methods
     public void checkOut (String name){
         checkedOutTo = name;
-        isCheckedout = true;
+        isCheckout = true;
     }
     public void checkIn(int id){
        if (String.valueOf(id).equals(this.id))
        {checkedOutTo="";
-        isCheckedout =false;
+        isCheckout =false;
            System.out.println("Check In complete.");
        } else {
            System.out.println("Wrong Id.");
@@ -34,46 +43,20 @@ public class Book {
     }
     // ----
     // Getters
-    public int getId() {
-        return id;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public boolean isCheckedout() {
-        return isCheckedout;
+    public boolean isCheckOut() {
+        return isCheckout;
     }
 
     public String getCheckedOutTo() {
         return checkedOutTo;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    //--
-   // Setters
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setCheckedout(boolean checkedout) {
-        isCheckedout = checkedout;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
+    // Setter
 
     public void setCheckedOutTo(String checkedOutTo) {
         this.checkedOutTo = checkedOutTo;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+
     //--
+
 }
